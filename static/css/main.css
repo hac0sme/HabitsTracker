@@ -169,14 +169,22 @@ centered within the allotted space */
 }
 
 .habit__button {
-  display: block;
+  display: flex;
   width: 100%;
   margin: 0;
-  padding: 20px;
+  padding: 0 10px;
   font-family: inherit;
   font-size: inherit;
   text-align: left;
   border: none;
   background-color: unset;
   cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 83.2px;
+}
+
+.habit__link{
+  color: inherit;
+  text-decoration: none;
 }
