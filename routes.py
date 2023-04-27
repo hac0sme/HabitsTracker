@@ -54,6 +54,15 @@ def complete():
     return redirect(url_for(".index", date=date_string))
 
 
+@pages.route("/uncompleted", methods=["POST"])
+def uncompleted():
+    date_string = request.form.get("date")
+    habit = request.form.get("habitId")
+    current_app.db.completions.delete_one({"habit": habit})
+
+    return redirect(url_for(".index", date=date_string))
+
+
 @pages.route("/add", methods=["GET", "POST"])
 def add_habit():
     today = today_at_midnight()
